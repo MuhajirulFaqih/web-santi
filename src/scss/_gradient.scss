@@ -1,0 +1,151 @@
+.gradient {
+    .bg-web {
+        background: rgb(65,204,117);
+        background: linear-gradient(138deg, rgba(65,204,117,1) 0%, rgba(84,196,173,1) 100%);
+        .top-element {
+            position: relative;
+            z-index: 2;
+        }
+        .shape {
+            z-index: 1;
+            .big-rectangle {
+                bottom: 0;
+                left: unset;
+                right: 6em;
+                width: 45%;
+                height: 70%;
+                border-top-left-radius: 5em;
+                border-bottom-right-radius: 5em;
+                opacity: 0.4;
+                background: $white;
+            }
+            .rectangle {
+                bottom: 0;
+                left: -10em;
+                width: 18%;
+                height: 20%;
+                border-top-right-radius: 3em;
+                opacity: 0.4;
+                background: $white;
+            }
+            .big-circle {
+                top: -5em;
+                right: -4em;
+                width: 15em;
+                height: 15em;
+                border-radius: 50%;
+                opacity: 0.4;
+                border: 3em solid $white;
+            }
+            .circle {
+                position: absolute;
+                background: transparent;
+                top: 9.5em;
+                left: unset;
+                right: 15em;
+                width: 10.5em;
+                height: 10.5em;
+                border-radius: 50%;
+                opacity: 0.4;
+                border: 2.3em solid $white;
+            }
+        }
+    }
+
+    .info-header {
+        .description div {
+            color: $white;  
+        }
+    }
+
+    .welcome-header {
+        color: $white;
+        .header {
+            color: $white;
+        }
+    }
+
+    .about-section:after {
+        background: rgb(65,204,117);
+        background: linear-gradient(138deg, rgba(65,204,117,1) 0%, rgba(84,196,173,1) 100%);
+    }
+
+    .term-section {
+        .shape {
+            background: rgb(65,204,117);
+            background: linear-gradient(138deg, rgba(65,204,117,1) 0%, rgba(84,196,173,1) 100%);
+            .circle {
+                border: 2.3em solid $white;
+                opacity: 0.4;
+            }
+            .rectangle {
+                background: $white;
+                opacity: 0.4;
+            }
+        }
+    }
+
+    .flow-section {
+        .flow-box {
+            margin-bottom: 5em;
+            .flow-header {
+                border-radius: 0;
+                &.primary {
+                    background: rgb(67,181,191);
+                    background: linear-gradient(138deg, rgba(67,181,191,1) 0%, rgba(145,221,165,1) 100%);
+                }
+                &.info {
+                    background: rgb(48,142,241);
+                    background: linear-gradient(138deg, rgba(48,142,241,1) 0%, rgba(57,199,221,1) 100%);
+                }
+                &.warning {
+                    background: rgb(242,93,122);
+                    background: linear-gradient(138deg, rgba(242,93,122,1) 0%, rgba(254,166,126,1) 100%);
+                }
+                &.danger {
+                    background: rgb(151,111,251);
+                    background: linear-gradient(138deg, rgba(151,111,251,1) 0%, rgba(184,166,255,1) 100%);
+                }
+                &.default {
+                    background: rgb(43,100,187);
+                    background: linear-gradient(138deg, rgba(43,100,187,1) 0%, rgba(101,144,212,1) 100%);
+                }
+            }
+        }
+    }
+
+    .footer-section {
+        margin-top: 8em;
+        padding: 5.2em 0em 1.5em;
+        background: rgb(65,204,117);
+        background: linear-gradient(138deg, rgba(65,204,117,1) 0%, rgba(84,196,173,1) 100%);
+    }
+
+    .footer-copy {
+        margin-top: 5em;
+        background: transparent;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+@media (max-width: 991.98px) {
+    .bg-web {
+        .shape {
+            display: none !important;
+        }
+    }
+    .gradient {
+        .btn-login {
+            color: $white;
+            border: 1px solid $white !important;
+            background: transparent !important;
+            &:hover, &:focus {
+                background: rgba(58, 57, 57, 0.123) !important;
+            }
+            &:active {
+                background: rgba(58, 57, 57, 0.123) !important;
+            }
+        }
+    }
+}

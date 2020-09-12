@@ -1,0 +1,97 @@
+<template>
+    <div>
+        <b-row>
+            <b-col cols="12" lg="5">
+                <div class="box">
+                    <b-button @click="$router.go(-1)" class="btn btn-back"><eva-icon name="arrow-ios-back-outline"></eva-icon></b-button>
+                    <b-form @submit.prevent="submitForm" class="form-horizontal">
+                        <b-row>
+                            <b-col cols="12" lg="12">
+                                <b-form-group label="Nama">
+                                    <b-form-input v-model.trim="singleForm.nama" />
+                                </b-form-group>
+                            </b-col>
+                        </b-row>
+                        <b-row>
+                            <b-col cols="12" lg="8">
+                                <b-form-group label="Username">
+                                    <b-form-input v-model.trim="singleForm.username" />
+                                </b-form-group>
+                            </b-col>
+                        </b-row>
+                        <b-row>
+                            <b-col cols="12" lg="8">
+                                <b-form-group label="No handphone">
+                                    <b-form-input v-model.trim="singleForm.no_hp" />
+                                </b-form-group>
+                            </b-col>
+                        </b-row>
+                        <b-row>
+                            <b-col cols="12" lg="9">
+                                <b-form-group label="Password baru" class="password">
+                                    <b-form-input type="password" v-model.trim="singleForm.password" />
+                                    <eva-icon name="eye-outline" class="show active"></eva-icon>
+                                    <eva-icon name="eye-off-2-outline" class="hide"></eva-icon>
+                                    <span class="mt-1 d-block">*) Isi hanya jika password diganti</span>
+                                </b-form-group>
+                            </b-col>
+                        </b-row>
+                        <b-row>
+                            <b-col cols="12" lg="9">
+                                <b-form-group label="Konfirmasi password" class="password">
+                                    <b-form-input type="password" v-model.trim="singleForm.konfirmasiPassword" />
+                                    <eva-icon name="eye-outline" class="show active"></eva-icon>
+                                    <eva-icon name="eye-off-2-outline" class="hide"></eva-icon>
+                                    <span class="mt-1 d-block">*) Isi hanya jika password diganti</span>
+                                </b-form-group>
+                            </b-col>
+                        </b-row>
+                        <b-row>
+                            <b-col cols="12" class="mt-3">
+                                <b-button variant="primary" type="submit" class="float-right">Edit data</b-button>
+                            </b-col>
+                        </b-row>
+                    </b-form>
+                </div>
+            </b-col>
+        </b-row>
+    </div>
+</template>
+<script>
+    export default {
+        name: 'sudo-manajemen-pemohon-edit',
+        data() {
+            return {
+                singleForm: {
+                    nama: 'Author',
+                    username: 'author',
+                    no_hp: '087687687567',
+                    password: null,
+                    konfirmasiPassword: null,
+                },
+            }
+        },
+        methods: {
+            submitForm() {
+                this.$router.push({ name: 'sudo-manajemen-pemohon' })
+                this.$noty.success('Data pemohon berhasil diedit');
+            },
+        },
+        mounted() {
+            var icon = window.$('.password .eva-hover')
+            icon.click(function() {
+                var element = window.$(this)
+                var div = element.parent()
+                if(div.find('.form-control').attr('type') == 'text') {
+                    div.find('.form-control').attr('type', 'password')
+                    div.find('.show').addClass('active')
+                    div.find('.hide').removeClass('active')
+                } else {
+                    div.find('.form-control').attr('type', 'text')
+                    div.find('.show').removeClass('active')
+                    div.find('.hide').addClass('active')
+                }
+            })
+        }
+    }
+</script>
